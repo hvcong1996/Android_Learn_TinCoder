@@ -26,24 +26,27 @@ public class MainActivity extends AppCompatActivity {
         SetupViewPager();
 
         // Event when click item in Navigation
-        bottomNavigationView.setOnNavigationItemReselectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.action_home:
-                default:
-                    // Set Fragment item cho ViewPage
-                    // 0: Fragment Home
-                    viewPager.setCurrentItem(0);
-                    break;
-                case R.id.action_favorite:
-                    // Set Fragment item cho ViewPage
-                    // 1: Fragment Favorite
-                    viewPager.setCurrentItem(1);
-                    break;
-                case R.id.action_friend:
-                    // Set Fragment item cho ViewPage
-                    // 2: Fragment Friend
-                    viewPager.setCurrentItem(2);
-                    break;
+        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.action_home:
+                    default:
+                        // Set Fragment item cho ViewPage
+                        // 0: Fragment Home
+                        viewPager.setCurrentItem(0);
+                        break;
+                    case R.id.action_favorite:
+                        // Set Fragment item cho ViewPage
+                        // 1: Fragment Favorite
+                        viewPager.setCurrentItem(1);
+                        break;
+                    case R.id.action_friend:
+                        // Set Fragment item cho ViewPage
+                        // 2: Fragment Friend
+                        viewPager.setCurrentItem(2);
+                        break;
+                }
             }
         });
 
