@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:hint="@string/auto_complete_textview_hint"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:completionThreshold="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:dropDownAnchor="@id/textViewListCountry"/>
+
+    <TextView
+        android:id="@+id/textViewListCountry"
+        android:textColor="#f000"
+        android:textSize="15sp"
+        android:text="List countries"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

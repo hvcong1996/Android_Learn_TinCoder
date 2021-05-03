@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         SetupViewPager();
 
         // Event when click item in Navigation
-        bottomNavigationView.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onNavigationItemReselected(@NonNull MenuItem item) {
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.action_home:
                     default:
@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
                         viewPager.setCurrentItem(2);
                         break;
                 }
+                return true;
             }
         });
 

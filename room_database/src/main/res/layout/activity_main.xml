@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textColor="#f000"
+        android:hint="User name" />
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textColor="#f000"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/editTextYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:textColor="#f000"
+        android:hint="Year" />
+
+    <Button
+        android:id="@+id/buttonAddUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add User" />
+
+    <TextView
+        android:id="@+id/textViewDeleteAllUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        android:layout_margin="5dp"
+        android:text="Delete All User" />
+
+<!--    Sử dụng inputType, imeOptions để tạo seach trên keyboard-->
+<!--    android:inputType="text"-->
+<!--    android:imeOptions="actionSearch"-->
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:hint="Search user"
+        android:background="@drawable/search_custom_edit_text"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">product_cart</string>
+    <string name="product_fragment">Product fragment</string>
+    <string name="cart_fragment">Cart fragment</string>
+    <string name="notice_fragment">Notice fragment</string>
+
+    <string name="tab_title_product">Product</string>
+    <string name="tab_title_cart">Cart</string>
+    <string name="tab_title_notice">Notice</string>
+</resources>

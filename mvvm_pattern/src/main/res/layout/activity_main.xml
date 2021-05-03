@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable
+            name="LoginViewModel"
+            type="com.example.mvvm_pattern.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+        <TextView
+            android:id="@+id/textViewLoginTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#f000"
+            android:text="LOGIN" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:text="@={LoginViewModel.email}"
+            android:textColor="#f000"
+            android:hint="Email" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:text="@={LoginViewModel.password}"
+            android:textColor="#f000"
+            android:hint="Password" />
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{LoginViewModel.messageVisibility ? View.VISIBLE : View.GONE}"
+            android:text="@{LoginViewModel.message}"
+            android:textColor="@{LoginViewModel.isLoginSuccess ? @color/black : @color/red}" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> LoginViewModel.onClickLogin()}"
+            android:text="Login" />
+    </LinearLayout>
+
+
+</layout>
