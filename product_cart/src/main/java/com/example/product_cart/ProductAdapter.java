@@ -45,12 +45,26 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.textViewProductName.setText(product.getName());
         holder.textViewProductDescription.setText(product.getDescription());
 
+        // Change background khi user add cart
+        if(product.isAddToCart()){
+            holder.imageViewCart.setBackgroundResource(R.drawable.background_cart_disable);
+        }
+        else {
+            holder.imageViewCart.setBackgroundResource(R.drawable.background_cart);
+        }
+
         holder.imageViewCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iAddToCart.onClickAddToCart(holder.imageViewCart, product);
+
+                // Sản phẩm chưa add vào cart mới có thể thực hiện add
+                // Sản phẩm đã add vào cart thì không thể add nữa
+                if(!product.isAddToCart()){
+                    iAddToCart.onClickAddToCart(holder.imageViewCart, product);
+                }
             }
         });
+
     }
 
     @Override

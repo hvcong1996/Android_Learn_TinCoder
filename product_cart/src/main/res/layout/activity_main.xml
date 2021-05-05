@@ -11,6 +11,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <View
+        android:id="@+id/viewEndAnimation"
+        android:background="#f00"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/AHBottomNavigation"
+        android:visibility="invisible"
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <ImageView
+        android:id="@+id/imageViewAnimation"
+        android:background="@drawable/background_product"
+        android:visibility="invisible"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+
     <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
         android:id="@+id/AHBottomNavigation"
         android:layout_alignParentBottom="true"

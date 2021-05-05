@@ -1,20 +1,30 @@
 package com.example.product_cart;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationViewPager;
+import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 
 public class MainActivity extends AppCompatActivity {
 
     private AHBottomNavigation ahBottomNavigation;
     private AHBottomNavigationViewPager ahBottomNavigationViewPager;
     private ViewPagerAdapter viewPagerAdapter;
+
+    private View viewEndAnimation;
+    private ImageView imageViewAnimation;
+
+    private int mCountProduct;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
     private void InitView(){
         ahBottomNavigation = findViewById(R.id.AHBottomNavigation);
         ahBottomNavigationViewPager = findViewById(R.id.AHBottomNavigationViewPager);
+        viewEndAnimation = findViewById(R.id.viewEndAnimation);
+        imageViewAnimation = findViewById(R.id.imageViewAnimation);
     }
 
     private void InitNavItem(){
@@ -77,5 +89,31 @@ public class MainActivity extends AppCompatActivity {
         ahBottomNavigation.addItem(productItem);
         ahBottomNavigation.addItem(cartItem);
         ahBottomNavigation.addItem(noticeItem);
+    }
+
+    public View getViewEndAnimation() {
+        return viewEndAnimation;
+    }
+
+    public ImageView getImageViewAnimation() {
+        return imageViewAnimation;
+    }
+
+    public void setCountProductInCart(int count){
+
+        mCountProduct = count;
+
+        AHNotification notification = new AHNotification.Builder()
+                .setText(String.valueOf(count))
+                .setBackgroundColor(ContextCompat.getColor(MainActivity.this, R.color.tab_color_product))
+                .setTextColor(ContextCompat.getColor(MainActivity.this, R.color.white))
+                .build();
+
+        // itemPosition: vị trí của tab(0: product / 1: cart / 2: notice)
+        ahBottomNavigation.setNotification(notification, 1);
+    }
+
+    public int getCountProduct() {
+        return mCountProduct;
     }
 }
