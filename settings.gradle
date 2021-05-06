@@ -1,3 +1,4 @@
+include ':activity_send_data_to_activity'
 include ':navigation_drawer'
 include ':room_database'
 include ':mvvm_pattern'
