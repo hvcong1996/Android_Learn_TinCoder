@@ -1,3 +1,7 @@
+include ':game_point'
+include ':share_preferences'
+include ':fragment_send_data_to_fragment'
+include ':activity_send_data_to_fragment'
 include ':activity_send_data_to_activity'
 include ':navigation_drawer'
 include ':room_database'
